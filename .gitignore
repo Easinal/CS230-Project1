@@ -1,3 +1,5 @@
 *.o
 grading/
 build/
+.sconsign.dblite
+ray_tracer
