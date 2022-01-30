@@ -1,0 +1,3 @@
+*.o
+grading/
+build/
