@@ -8,7 +8,7 @@ void Hierarchy::Reorder_Entries()
 {
     if(!entries.size()) return;
     auto tmp = entries;
-    printf("entries.size()=%zu\n", entries.size());
+    //printf("entries.size()=%zu\n", entries.size());
     std::function<void(int, int, int)> my_sort = [&](int l, int r, int dim) {
         if(l >= r-1) {
             return;

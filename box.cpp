@@ -4,21 +4,8 @@
 // Return whether the ray intersects this box.
 bool Box::Intersection(const Ray& ray) const
 {
-     //float tx_min = (lo[0]-ray.endpoint[0]) / ray.direction[0];
-     //float tx_max = (hi[0]-ray.endpoint[0]) / ray.direction[0];
-     //float ty_min = (lo[1]-ray.endpoint[1]) / ray.direction[1];
-     //float ty_max = (hi[1]-ray.endpoint[1]) / ray.direction[1];
-     //float tz_min = (lo[2]-ray.endpoint[2]) / ray.direction[2];
-     //float tz_max = (hi[2]-ray.endpoint[2]) / ray.direction[2];
-     //if(tx_min > ty_max || ty_min > tx_max || tz_min > tz_max) {
-       //return false;
-     //} else {
-       //return true;
-     //}
-    vec3 invdir = vec3(1.0/ray.direction[0], 1.0/ray.direction[1], 1.0/ray.direction[2]);
-    vec3 in = (lo-ray.endpoint)*invdir;
-    vec3 out = (hi-ray.endpoint)*invdir;
-
+    vec3 in = (lo-ray.endpoint)/ray.direction;
+    vec3 out = (hi-ray.endpoint)/ray.direction;
     vec3 tmax = in, tmin = in;
     for(int i = 0; i < 3; i++) {
         tmax[i] = std::max(tmax[i], out[i]);

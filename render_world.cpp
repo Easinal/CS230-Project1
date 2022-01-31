@@ -27,9 +27,9 @@ Hit Render_World::Closest_Intersection(const Ray& ray)
     
     std::vector<int> candidates;
     hierarchy.Intersection_Candidates(ray, candidates);
-    //printf("Candidates.size()=%zu\n", candidates.size());
+    // if(candidates.size())printf("Candidates.size()=%zu\n", candidates.size());
     for(int i = 0; i < (int)candidates.size(); i++){
-        Hit tmp_hit = hierarchy.entries[candidates[i]].obj->Intersection(ray, hierarchy.entries[i].part);
+        Hit tmp_hit = hierarchy.entries[candidates[i]].obj->Intersection(ray, hierarchy.entries[candidates[i]].part);
     	if(tmp_hit.object){
     		if(tmp_hit.dist < dis && tmp_hit.dist > small_t){
     			closest_hit = tmp_hit;
