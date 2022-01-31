@@ -1,5 +1,8 @@
 *.o
 *.txt
+*.log 
+*.png
+.vscode/
 grading/
 build/
 .sconsign.dblite
